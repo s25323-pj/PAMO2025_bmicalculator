@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zdrowie i Dieta</string>
+
+    <string-array name="activity_levels">
+        <item>Siedzący (brak aktywności)</item>
+        <item>Lekko aktywny (1-3 treningi/tydzień)</item>
+        <item>Umiarkowanie aktywny (3-5 treningów/tydzień)</item>
+        <item>Bardzo aktywny (6-7 treningów/tydzień)</item>
+        <item>Ekstremalnie aktywny (sportowiec zawodowy)</item>
+    </string-array>
+</resources>
