@@ -1,12 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Zdrowie i Dieta</string>
+    <string name="app_logo_description">Logo aplikacji zdrowotnej</string>
+
+    <!-- Stringi dla activity_splash.xml -->
+    <string name="app_title">Zdrowie i Dieta</string>
+    <string name="app_subtitle">Oblicz BMI i zaplanuj swoją dietę</string>
+    <string name="start_button">ROZPOCZNIJ</string>
+
+    <!-- Stringi dla activity_main.xml (kalkulator BMI) -->
+    <string name="bmi_calculator_title">Kalkulator BMI</string>
+    <string name="enter_weight">Podaj wagę (kg)</string>
+    <string name="enter_height">Podaj wzrost (cm)</string>
+    <string name="calculate_bmi_button">OBLICZ BMI</string>
+    <string name="result_label">Wynik: </string>
+    <string name="calorie_calculator_button">KALKULATOR KALORII</string>
+    <string name="recipes_button">PRZEPISY</string>
+
+    <!-- Stringi dla activity_calorie_calculator.xml -->
+    <string name="calorie_calculator_title">Kalkulator Kalorii</string>
+    <string name="gender_label">Płeć:</string>
+    <string name="male">Mężczyzna</string>
+    <string name="female">Kobieta</string>
+    <string name="age_hint">Wiek (lata)</string>
+    <string name="weight_hint">Waga (kg)</string>
+    <string name="height_hint">Wzrost (cm)</string>
+    <string name="activity_level_label">Poziom aktywności:</string>
+    <string name="calculate_calories_button">OBLICZ KALORIE</string>
+    <string name="daily_requirement">Twoje dzienne zapotrzebowanie:</string>
+    <string name="show_recipes_button">POKAŻ PRZEPISY</string>
+    <string name="back_button">POWRÓT</string>
+
+    <!-- Dodaj do pliku strings.xml -->
+    <!-- Stringi dla activity_recipes.xml -->
+    <string name="recommended_recipes">Rekomendowane Przepisy</string>
+    <string name="choose_diet_type">Wybierz rodzaj diety:</string>
+    <string name="standard_diet">Standardowa</string>
+    <string name="vegetarian_diet">Wegetariańska</string>
+    <string name="vegan_diet">Wegańska</string>
+    <string name="recipe_title_placeholder">Tytuł Przepisu</string>
+    <string name="recipe_calories_placeholder">Kalorie: 0 kcal</string>
+    <string name="ingredients_label">Składniki:</string>
+    <string name="ingredients_list_placeholder">Lista składników</string>
+    <string name="preparation_label">Przygotowanie:</string>
+    <string name="preparation_instructions_placeholder">Instrukcje przygotowania</string>
+
+    <!-- Zakres wieku z poprawnym en-dash -->
+    <string name="age_range">18–65 lat</string>
 
     <string-array name="activity_levels">
         <item>Siedzący (brak aktywności)</item>
-        <item>Lekko aktywny (1-3 treningi/tydzień)</item>
-        <item>Umiarkowanie aktywny (3-5 treningów/tydzień)</item>
-        <item>Bardzo aktywny (6-7 treningów/tydzień)</item>
+        <item>Lekko aktywny (1–3 treningi/tydzień)</item>
+        <item>Umiarkowanie aktywny (3–5 treningów/tydzień)</item>
+        <item>Bardzo aktywny (6–7 treningów/tydzień)</item>
         <item>Ekstremalnie aktywny (sportowiec zawodowy)</item>
     </string-array>
 </resources>

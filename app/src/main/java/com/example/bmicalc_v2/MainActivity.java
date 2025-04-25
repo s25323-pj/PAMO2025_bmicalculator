@@ -10,13 +10,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText weightInput, heightInput;
-    private TextView resultText;
+    public EditText weightInput, heightInput;
+    public TextView resultText;
+    private BMICalculator bmiCalculator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        bmiCalculator = new BMICalculator();
 
         weightInput = findViewById(R.id.weightInput);
         heightInput = findViewById(R.id.heightInput);
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void calculateBMI() {
+    public void calculateBMI() {
         String weightStr = weightInput.getText().toString();
         String heightStr = heightInput.getText().toString();
 
@@ -58,25 +61,18 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        double weight = Double.parseDouble(weightStr);
-        double heightCm = Double.parseDouble(heightStr);
+        try {
+            double weight = Double.parseDouble(weightStr);
+            double heightCm = Double.parseDouble(heightStr);
 
-        if (weight <= 0 || heightCm <= 0) {
-            resultText.setText("Waga i wzrost muszą być większe od zera!");
-            return;
+            double bmi = bmiCalculator.calculateBMI(weight, heightCm);
+            String status = bmiCalculator.getBMIStatus(bmi);
+
+            resultText.setText(String.format("Twoje BMI: %.2f (%s)", bmi, status));
+        } catch (NumberFormatException e) {
+            resultText.setText("Nieprawidłowy format liczby!");
+        } catch (IllegalArgumentException e) {
+            resultText.setText(e.getMessage());
         }
-
-        double height = heightCm / 100.0;
-        double bmi = weight / (height * height);
-        String status = getBMIStatus(bmi);
-
-        resultText.setText(String.format("Twoje BMI: %.2f (%s)", bmi, status));
-    }
-
-    private String getBMIStatus(double bmi) {
-        if (bmi < 18.5) return "Niedowaga";
-        else if (bmi < 25) return "Optimum";
-        else if (bmi < 30) return "Nadwaga";
-        else return "Otyłość";
     }
 }

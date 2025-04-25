@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kalkulator Kalorii"
+        android:text="@string/calorie_calculator_title"
         android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="#333333"
@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Płeć:"
+                android:text="@string/gender_label"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"/>
@@ -46,23 +46,25 @@
                     android:id="@+id/maleRadio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mężczyzna"
+                    android:text="@string/male"
                     android:layout_marginEnd="20dp"/>
 
                 <RadioButton
                     android:id="@+id/femaleRadio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Kobieta"/>
+                    android:text="@string/female"/>
             </RadioGroup>
 
             <EditText
                 android:id="@+id/ageInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Wiek (lata)"
+                android:hint="@string/age_hint"
                 android:inputType="number"
                 android:padding="12dp"
+                android:importantForAutofill="yes"
+                android:autofillHints="age"
                 android:background="@drawable/edit_text_background"
                 android:layout_marginTop="16dp"/>
 
@@ -70,9 +72,11 @@
                 android:id="@+id/weightInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Waga (kg)"
+                android:hint="@string/weight_hint"
                 android:inputType="numberDecimal"
                 android:padding="12dp"
+                android:importantForAutofill="yes"
+                android:autofillHints="weight"
                 android:background="@drawable/edit_text_background"
                 android:layout_marginTop="16dp"/>
 
@@ -80,16 +84,18 @@
                 android:id="@+id/heightInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Wzrost (cm)"
+                android:hint="@string/height_hint"
                 android:inputType="numberDecimal"
                 android:padding="12dp"
+                android:importantForAutofill="yes"
+                android:autofillHints="height"
                 android:background="@drawable/edit_text_background"
                 android:layout_marginTop="16dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Poziom aktywności:"
+                android:text="@string/activity_level_label"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"/>
@@ -106,7 +112,7 @@
                 android:id="@+id/calculateCaloriesButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="OBLICZ KALORIE"
+                android:text="@string/calculate_calories_button"
                 android:textStyle="bold"
                 android:padding="12dp"
                 android:layout_marginTop="24dp"
@@ -117,7 +123,7 @@
                 android:id="@+id/calorieResultText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Twoje dzienne zapotrzebowanie:"
+                android:text="@string/daily_requirement"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_marginTop="24dp"
@@ -136,7 +142,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="POKAŻ PRZEPISY"
+            android:text="@string/show_recipes_button"
             android:textStyle="bold"
             android:padding="12dp"
             android:layout_marginEnd="5dp"
@@ -148,7 +154,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="POWRÓT"
+            android:text="@string/back_button"
             android:textStyle="bold"
             android:padding="12dp"
             android:layout_marginStart="5dp"

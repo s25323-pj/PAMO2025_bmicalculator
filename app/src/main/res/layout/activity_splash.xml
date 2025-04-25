@@ -11,7 +11,8 @@
         android:layout_height="200dp"
         android:layout_centerInParent="true"
         android:layout_marginBottom="50dp"
-        android:src="@drawable/health_icon" />
+        android:src="@drawable/health_icon"
+        android:contentDescription="@string/app_logo_description" />
 
     <TextView
         android:id="@+id/appTitle"
@@ -19,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/splashImage"
         android:layout_centerHorizontal="true"
-        android:text="Zdrowie i Dieta"
+        android:text="@string/app_title"
         android:textSize="28sp"
         android:textStyle="bold"
         android:textColor="#4CAF50"/>
@@ -31,7 +32,7 @@
         android:layout_below="@id/appTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="Oblicz BMI i zaplanuj swoją dietę"
+        android:text="@string/app_subtitle"
         android:textSize="16sp"
         android:textColor="#333333"/>
 
@@ -42,7 +43,7 @@
         android:layout_below="@id/appSubtitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="ROZPOCZNIJ"
+        android:text="@string/start_button"
         android:textStyle="bold"
         android:padding="12dp"
         android:background="@drawable/button_background"
