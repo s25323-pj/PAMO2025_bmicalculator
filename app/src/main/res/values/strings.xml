@@ -8,7 +8,7 @@
     <string name="app_subtitle">Oblicz BMI i zaplanuj swoją dietę</string>
     <string name="start_button">ROZPOCZNIJ</string>
 
-    <!-- Stringi dla activity_main.xml (kalkulator BMI) -->
+    <!-- Stringi dla activity_main.xml -->
     <string name="bmi_calculator_title">Kalkulator BMI</string>
     <string name="enter_weight">Podaj wagę (kg)</string>
     <string name="enter_height">Podaj wzrost (cm)</string>
@@ -31,7 +31,6 @@
     <string name="show_recipes_button">POKAŻ PRZEPISY</string>
     <string name="back_button">POWRÓT</string>
 
-    <!-- Dodaj do pliku strings.xml -->
     <!-- Stringi dla activity_recipes.xml -->
     <string name="recommended_recipes">Rekomendowane Przepisy</string>
     <string name="choose_diet_type">Wybierz rodzaj diety:</string>
@@ -45,7 +44,6 @@
     <string name="preparation_label">Przygotowanie:</string>
     <string name="preparation_instructions_placeholder">Instrukcje przygotowania</string>
 
-    <!-- Zakres wieku z poprawnym en-dash -->
     <string name="age_range">18–65 lat</string>
 
     <string-array name="activity_levels">
