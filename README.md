@@ -16,7 +16,8 @@ Aplikacja pozwalająca obliczyć swoje BMI, zapotrzebowanie kaloryczne oraz zapr
 ![img_4.png](img_4.png)
 ![img_5.png](img_5.png)
 ![img.png](img.png)
-
-
+![img_6.png](img_6.png)
+![img_8.png](img_8.png)
+![img_7.png](img_7.png)
 
 
