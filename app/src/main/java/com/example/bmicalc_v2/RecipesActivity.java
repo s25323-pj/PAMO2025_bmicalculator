@@ -1,5 +1,7 @@
 package com.example.bmicalc_v2;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +35,7 @@ public class RecipesActivity extends AppCompatActivity {
         recipeCalories = findViewById(R.id.recipeCalories);
         dietTypeGroup = findViewById(R.id.dietTypeGroup);
         Button backButton = findViewById(R.id.backToMainButton);
+        Button shoppingListButton = findViewById(R.id.shoppingListButton); // Nowy przycisk
 
         initializeRecipes();
 
@@ -50,50 +53,91 @@ public class RecipesActivity extends AppCompatActivity {
             }
         });
 
+        shoppingListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecipesActivity.this, ShoppingListActivity.class);
+                String recipeType = getCurrentRecipeType();
+                intent.putExtra("recipeType", recipeType);
+                intent.putExtra("recipeIndex", 0);
+                startActivity(intent);
+            }
+        });
+
         updateRecipeDisplay();
     }
 
-    private void initializeRecipes() {
-        standardRecipes.add(new Recipe(
+    public void initializeRecipes() {
+        standardRecipes = getStandardRecipes();
+        vegetarianRecipes = getVegetarianRecipes();
+        veganRecipes = getVeganRecipes();
+    }
+
+    private String getCurrentRecipeType() {
+        int selectedDietId = dietTypeGroup.getCheckedRadioButtonId();
+
+        if (selectedDietId == R.id.veganRadio) {
+            return "vegan";
+        } else if (selectedDietId == R.id.vegetarianRadio) {
+            return "vegetarian";
+        } else {
+            return "standard";
+        }
+    }
+
+    // Statyczne metody do pobierania przepisów
+    public static List<Recipe> getStandardRecipes() {
+        List<Recipe> recipes = new ArrayList<>();
+        recipes.add(new Recipe(
                 "Kurczak z warzywami",
                 "- 150g piersi z kurczaka\n- 100g brokułów\n- 100g marchewki\n- 1 łyżka oliwy z oliwek\n- przyprawy (sól, pieprz, czosnek)",
                 "1. Pokrój kurczaka na kawałki.\n2. Umyj i pokrój warzywa.\n3. Rozgrzej patelnię z oliwą.\n4. Dodaj kurczaka i smaż 5 minut.\n5. Dodaj warzywa i przyprawy.\n6. Smaż jeszcze 10 minut mieszając.",
                 450
         ));
-        standardRecipes.add(new Recipe(
+        recipes.add(new Recipe(
                 "Makaron z sosem bolognese",
                 "- 100g makaronu pełnoziarnistego\n- 100g mielonej wołowiny\n- 1 cebula\n- 1 marchewka\n- 2 łyżki przecieru pomidorowego\n- przyprawy (sól, pieprz, oregano)",
                 "1. Ugotuj makaron zgodnie z instrukcją.\n2. Na patelni podsmaż cebulę.\n3. Dodaj mięso i smaż do zrumienienia.\n4. Dodaj startą marchewkę i przecier.\n5. Dopraw i gotuj 10 minut.\n6. Połącz z makaronem.",
                 600
         ));
+        return recipes;
+    }
 
-        vegetarianRecipes.add(new Recipe(
+    public static List<Recipe> getVegetarianRecipes() {
+        List<Recipe> recipes = new ArrayList<>();
+        recipes.add(new Recipe(
                 "Sałatka z fetą i quinoa",
                 "- 100g quinoa\n- 50g sera feta\n- 1 pomidor\n- 1 ogórek\n- garść rukoli\n- oliwa z oliwek\n- sok z cytryny",
                 "1. Ugotuj quinoa zgodnie z instrukcją.\n2. Pokrój warzywa w kostkę.\n3. Pokrusz fetę.\n4. Połącz wszystkie składniki.\n5. Skrop oliwą i sokiem z cytryny.",
                 400
         ));
-        vegetarianRecipes.add(new Recipe(
+        recipes.add(new Recipe(
                 "Risotto z grzybami",
                 "- 100g ryżu arborio\n- 150g pieczarek\n- 1 cebula\n- 50ml białego wina\n- 300ml bulionu warzywnego\n- 2 łyżki parmezanu\n- masło",
                 "1. Podsmaż posiekaną cebulę na maśle.\n2. Dodaj ryż i smaż 2 minuty.\n3. Wlej wino i poczekaj aż odparuje.\n4. Stopniowo dodawaj bulion, mieszając.\n5. Pod koniec dodaj grzyby i parmezan.",
                 550
         ));
+        return recipes;
+    }
 
-        veganRecipes.add(new Recipe(
+    public static List<Recipe> getVeganRecipes() {
+        List<Recipe> recipes = new ArrayList<>();
+        recipes.add(new Recipe(
                 "Curry z ciecierzycą",
                 "- 200g ciecierzycy z puszki\n- 1 cebula\n- 1 papryka\n- 100ml mleka kokosowego\n- 2 łyżki pasty curry\n- ryż basmati",
                 "1. Podsmaż cebulę i paprykę.\n2. Dodaj pastę curry i ciecierzycę.\n3. Wlej mleko kokosowe.\n4. Gotuj 10 minut.\n5. Podawaj z ryżem.",
                 500
         ));
-        veganRecipes.add(new Recipe(
+        recipes.add(new Recipe(
                 "Makaron z sosem z awokado",
                 "- 100g makaronu pełnoziarnistego\n- 1 dojrzałe awokado\n- sok z 1/2 cytryny\n- 2 łyżki oliwy\n- garść świeżej bazylii\n- czosnek",
                 "1. Ugotuj makaron.\n2. Zblenduj awokado z pozostałymi składnikami.\n3. Wymieszaj makaron z sosem.\n4. Posyp świeżymi ziołami.",
                 450
         ));
+        return recipes;
     }
 
+    @SuppressLint("DefaultLocale")
     private void updateRecipeDisplay() {
         List<Recipe> recipeList;
         int selectedDietId = dietTypeGroup.getCheckedRadioButtonId();
@@ -129,7 +173,7 @@ public class RecipesActivity extends AppCompatActivity {
         return bestRecipe;
     }
 
-    private static class Recipe {
+    public static class Recipe {
         private String title;
         private String ingredients;
         private String instructions;

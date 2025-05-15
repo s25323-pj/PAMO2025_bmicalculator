@@ -20,6 +20,9 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".CalorieCalculatorActivity" />
         <activity android:name=".RecipesActivity" />
+
+        <activity android:name=".ShoppingListActivity" />
+        <activity android:name=".BMIChartActivity" />
     </application>
 
 </manifest>

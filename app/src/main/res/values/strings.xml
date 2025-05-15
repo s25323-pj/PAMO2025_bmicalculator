@@ -17,6 +17,10 @@
     <string name="calorie_calculator_button">KALKULATOR KALORII</string>
     <string name="recipes_button">PRZEPISY</string>
 
+    <!-- Dodane nowe stringi dla przycisków -->
+    <string name="shopping_list_button">LISTA ZAKUPÓW</string>
+    <string name="bmi_chart_button">WYKRES BMI</string>
+
     <!-- Stringi dla activity_calorie_calculator.xml -->
     <string name="calorie_calculator_title">Kalkulator Kalorii</string>
     <string name="gender_label">Płeć:</string>
@@ -43,6 +47,16 @@
     <string name="ingredients_list_placeholder">Lista składników</string>
     <string name="preparation_label">Przygotowanie:</string>
     <string name="preparation_instructions_placeholder">Instrukcje przygotowania</string>
+
+    <!-- Dodane stringi dla nowych aktywności -->
+    <string name="shopping_list_title">Lista zakupów</string>
+    <string name="recipe_name_placeholder">Nazwa przepisu</string>
+    <string name="bmi_chart_title">Wykres BMI w czasie</string>
+
+    <!-- Stringi dla radio buttonów w activity_shopping_list.xml -->
+    <string name="standard_recipe_radio">Kurczak z warzywami</string>
+    <string name="vegetarian_recipe_radio">Sałatka z fetą</string>
+    <string name="vegan_recipe_radio">Makaron z awokado</string>
 
     <string name="age_range">18–65 lat</string>
 

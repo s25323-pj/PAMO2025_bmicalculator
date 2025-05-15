@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         Button calculateButton = findViewById(R.id.calculateButton);
         Button caloriesButton = findViewById(R.id.caloriesButton);
         Button recipesButton = findViewById(R.id.recipesButton);
+        Button shoppingListButton = findViewById(R.id.shoppingListButton);
+        Button bmiChartButton = findViewById(R.id.bmiChartButton);
 
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +49,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RecipesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        shoppingListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ShoppingListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        bmiChartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BMIChartActivity.class);
                 startActivity(intent);
             }
         });
