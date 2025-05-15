@@ -85,7 +85,6 @@ public class RecipesActivity extends AppCompatActivity {
         }
     }
 
-    // Statyczne metody do pobierania przepisów
     public static List<Recipe> getStandardRecipes() {
         List<Recipe> recipes = new ArrayList<>();
         recipes.add(new Recipe(
